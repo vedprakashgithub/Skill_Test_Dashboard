@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Header from "./header";
 import {
@@ -12,7 +13,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+
 import { Sidebar } from "@/components/sidebar";
 import { Trophy, FileText, CheckCircle, ArrowRight } from "lucide-react";
 
@@ -49,7 +50,7 @@ export default function Dashboard() {
   const [rank, setRank] = useState("1");
   const [percentile, setPercentile] = useState("30");
   const [score, setScore] = useState("10");
-  const [comparisonData, setComparisonData] = useState(
+  const [comparisonData,] = useState(
     generateComparisonData()
   );
   const [syllabusData, setSyllabusData] = useState(initialSyllabusData);
@@ -126,8 +127,11 @@ export default function Dashboard() {
                         {/* Left Section: Icon & Title */}
                         <div className="flex items-center gap-3">
                           <div className="bg-orange-100 rounded-md">
-                            <img
+                            <Image
                               src="/images.png"
+                              alt="Icon"
+                              width={40} // Set appropriate width
+                              height={40} // Set appropriate height
                               className="w-10 h-10 object-contain"
                             />
                           </div>
@@ -320,9 +324,11 @@ export default function Dashboard() {
                       <div className="flex justify-center py-2">
                         <div className="relative w-40 h-40">
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <img
-                              src="target.jpg"
+                            <Image
+                              src="/target.jpg"
                               alt="Target"
+                              width={60} // Set an appropriate size
+                              height={60}
                               className="w-15 h-15"
                             />
                           </div>
@@ -362,7 +368,14 @@ export default function Dashboard() {
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-bold">Update scores</h2>
                 <div className="bg-orange-100  rounded-md">
-                  <img src="/images.png" className="w-10 h-10 object-contain" />
+          
+                  <Image
+                    src="/images.png"
+                    alt="Image Description"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain"
+                  />
                 </div>
               </div>
 

@@ -5,10 +5,7 @@ const Header: React.FC = () => {
     <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
       {/* Left Side: Logo */}
       <div className="flex items-center cursor-pointer space-x-2">
-        <div className="">
-          
-          </div> {/* Placeholder for Logo */}
-        <h1 className="text-lg font-bold"><img src="/logo.jpg"/></h1>
+        <Image src="/logo.jpg" alt="Logo" width={120} height={40} priority />
       </div>
 
       {/* Right Side: Profile */}
